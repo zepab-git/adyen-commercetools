@@ -7,9 +7,9 @@ let obj
 
 function getLogger() {
   if (obj === undefined) {
-    const NOTIFICATION_MODULE_NAME = 'ctp-adyen-integration-notifications'
+    const EXTENSION_MODULE_NAME = 'ctp-adyen-integration-extension'
     obj = bunyan.createLogger({
-      name: NOTIFICATION_MODULE_NAME,
+      name: EXTENSION_MODULE_NAME,
       stream: process.stdout,
       level: logLevel || bunyan.INFO,
       serializers: {
