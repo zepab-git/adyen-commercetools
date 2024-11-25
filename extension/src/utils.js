@@ -1,8 +1,8 @@
 import {serializeError} from 'serialize-error'
 import {fileURLToPath} from 'url'
-import {getLogger} from './utils/logger.js'
 import path from 'path'
 import fs from 'node:fs/promises'
+import {getAppLogger} from "./utils/logger.js";
 
 /**
  * @type {ReturnType<typeof bunyan.createLogger>}
@@ -30,7 +30,7 @@ function sendResponse({response, statusCode = 200, headers, data}) {
 }
 
 function getLogger() {
-    return getLogger()
+    return getAppLogger()
 }
 
 function handleUnexpectedPaymentError(paymentObj, err) {
